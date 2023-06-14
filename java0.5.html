@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.dropbtn {
+  background-color:black;
+  color: white;
+  padding: 14px;
+  font-size: 12px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+</style>
+
+
+
+<script src="firststeps.js"></script>
+</head>
+<body>
+
+
+
+
+
+<h2>Taschenrechner</h2>
+<br><h1>Addieren:</h1>
+<br>
+Zahl1: <input id="input01" type="number"/>
+<br/>
+Zahl2: <input id="input02" type="number"/>
+<p id="demo"></p>
+<button id="button01" type="button" onclick="myFunction()">Lösung</button> 
+
+<p id="output"> </p>
+
+<br><h1>Subtrahieren:</h1>
+<br>
+Zahl1: <input id="input03" type="number"/>
+<br/>
+Zahl2: <input id="input04" type="number"/>
+<p id="demo"></p>
+<button id="button02" type="button" onclick="myFunction2()">Lösung</button> 
+
+<p id="output2"> </p>
+
+<br><h1>Faktorisieren:</h1>
+<br>,
+
+Zahl1: <input id="input05" type="number"/>
+<br/>
+Zahl2: <input id="input06" type="number"/>
+<p id="demo"></p>
+<button id="button03" type="button" onclick="myFunction3()">Lösung</button> 
+
+<p id="output3"> </p>
+
+
+<br><h1>Dividieren:</h1>
+<br>
+Zahl1: <input id="input07" type="number"/>
+<br/>
+Zahl2: <input id="input08" type="number"/>
+<p id="demo"></p>
+<button id="button04" type="button" onclick="myFunction4()">Lösung</button> 
+
+<p id="output4"> </p>
+
+<br><h1>Potenzieren:</h1>
+<br>
+Basis: <input id="input09" type="number"/>
+<br/>
+Hochzahl: <input id="input10" type="number"/>
+<p id="demo"></p>
+<button id="button05" type="button" onclick="myFunction5()">Lösung</button> 
+
+<p id="output5"> </p>
+
+<br><h1>Wurzel ziehen:</h1>
+<br>
+Basis: <input id="input11" type="number"/>
+<br/>
+Hochzahl: <input id="input12" type="number"/>
+<p id="demo"></p>
+<button id="button05" type="button" onclick="myFunction6()">Lösung</button> 
+
+<p id="output6"> </p>
+<br><h1>Winkelfunktionen:</h1>
+
+<br>
+<br>
+Winkel(Rundungsfehler sind zu beachten!!!): <input id="input13" type="number"/>
+<br/>
+<p id="demo"></p>
+<p id="output7"> </p>
+
+<div class="dropdown">
+  <button class="dropbtn">Auswahl</button>
+  <div class="dropdown-content">
+    <a onclick="myFunction7()">sin</a>
+    <a onclick="myFunction8()">cos</a>
+    <a onclick="myFunction9()">tan</a>
+  </div>
+</div>
+<br>
+<br>
+<h2>Wählen Sie die Winkelfunktion aus</h2>
+
+
+<script>
+function myFunction()
+{
+	x=parseFloat(document.getElementById("input01").value);
+	y=parseFloat(document.getElementById("input02").value);
+	sum=y+x;
+  document.getElementById("output").innerHTML=sum;
+} 
+  
+
+
+ function myFunction2()
+{
+	x=parseFloat(document.getElementById("input03").value);
+	y=parseFloat(document.getElementById("input04").value);
+	sub=x-y;
+  document.getElementById("output2").innerHTML=sub;
+} 
+
+function myFunction3()
+{
+	x=parseFloat(document.getElementById("input05").value);
+	y=parseFloat(document.getElementById("input06").value);
+	mal=x*y;
+  document.getElementById("output3").innerHTML=mal;
+} 
+  
+function myFunction4()
+{
+	x=parseFloat(document.getElementById("input07").value);
+	y=parseFloat(document.getElementById("input08").value);
+	mal=x/y;
+  document.getElementById("output4").innerHTML=mal;
+} 
+  
+
+function myFunction5()
+{
+	x=parseFloat(document.getElementById("input09").value);
+	y=parseFloat(document.getElementById("input10").value);
+	mal=Math.pow(x, y);
+  document.getElementById("output5").innerHTML=mal;
+} 
+  
+function myFunction6()
+{
+	x=parseFloat(document.getElementById("input11").value);
+	y=parseFloat(document.getElementById("input12").value);
+	mal=Math.pow(x, 1.0/y)
+  document.getElementById("output6").innerHTML=mal;
+} 
+
+ 
+
+function myFunction7()
+{
+	x=parseFloat(document.getElementById("input13").value);
+	mal=Math.sin(x* Math.PI / 180);
+    document.getElementById("output7").innerHTML=mal;
+} 
+  
+function myFunction8()
+{
+	x=document.getElementById("input13").value;
+	mal=Math.cos(x * Math.PI / 180);
+	
+    document.getElementById("output7").innerHTML=mal;
+} 
+  
+function myFunction9()
+{
+	x=parseFloat(document.getElementById("input13").value);
+	mal=Math.sin(x* Math.PI / 180)/Math.cos(x* Math.PI / 180);
+    document.getElementById("output7").innerHTML=mal;
+} 
+
+  
+
+  
+</script>
+
+
+</body>
+
+</html>
+
+
+
+
+
